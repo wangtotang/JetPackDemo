@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainViewPagerFragment">
+
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.tanghongtu.jetpackdemo.ui.PlantDetailFragment"
+        android:label="plant_detail_fragment"
+        tools:layout="@layout/plant_detail_fragment" />
+    <fragment
+        android:id="@+id/mainViewPagerFragment"
+        android:name="com.tanghongtu.jetpackdemo.ui.MainViewPagerFragment"
+        android:label="fragment_main_view_pager"
+        tools:layout="@layout/fragment_main_view_pager" >
+        <action
+            android:id="@+id/action_mainViewPagerFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+</navigation>
