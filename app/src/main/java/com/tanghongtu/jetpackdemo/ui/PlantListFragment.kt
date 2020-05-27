@@ -1,34 +1,40 @@
 package com.tanghongtu.jetpackdemo.ui
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import com.tanghongtu.jetpackdemo.R
-import com.tanghongtu.jetpackdemo.viewmodel.PlantListViewModel
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
+import com.tanghongtu.jetpackdemo.adapters.PlantListAdapter
+import com.tanghongtu.jetpackdemo.databinding.PlantListFragmentBinding
+import com.tanghongtu.jetpackdemo.utilities.InjectorUtils
+import com.tanghongtu.jetpackdemo.viewmodels.PlantListViewModel
 
 class PlantListFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PlantListFragment()
+    private val viewModel: PlantListViewModel by viewModels {
+        InjectorUtils.providePlantListViewModelFactory(this)
     }
-
-    private lateinit var listViewModel: PlantListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.plant_list_fragment, container, false)
+        val binding = PlantListFragmentBinding.inflate(inflater, container, false)
+
+        val adapter = PlantListAdapter()
+        binding.rlPlantList.adapter = adapter
+        subscribeUi(adapter)
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        listViewModel = ViewModelProviders.of(this).get(PlantListViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun subscribeUi(adapter: PlantListAdapter) {
+        viewModel.plants.observe(viewLifecycleOwner) { plants ->
+            adapter.submitList(plants)
+        }
     }
 
 }

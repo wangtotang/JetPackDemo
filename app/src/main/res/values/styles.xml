@@ -1,8 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="Base.Theme.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
+    <!--<style name="Base.Theme.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
         <item name="colorPrimary">#4CAF50</item>
         <item name="colorPrimaryDark">#388E3C</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -10,7 +10,7 @@
         <item name="colorSecondary">#FFEB3B</item>
         <item name="android:colorBackground">#4CAF50</item>
         <item name="colorOnSurface">#000000</item>
-        <item name="colorSurface">#FCE4EC</item>
+        <item name="colorSurface">#FFFDE7</item>
     </style>
 
     <style name="Theme.AppTheme" parent="Base.Theme.AppTheme"/>
@@ -24,6 +24,39 @@
 
     <style name="TextAppearance.AppTheme.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>-->
+
+    <style name="Base.Theme.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#49bb79</item>
+        <item name="colorOnPrimary">#ffff63</item>
+        <item name="colorPrimaryDark">#005d2b</item>
+        <item name="colorOnSurface">#de000000</item>
+        <item name="colorAccent">#005d2b</item>
+        <item name="colorSurface">#fafafa</item>
+        <item name="colorSecondary">#ffff63</item>
+        <!--android:colorBackground有个bug，必须指定color的资源，不能是color的RGB数值-->
+        <item name="android:colorBackground">@color/sunflower_green_500</item>
+    </style>
+
+    <style name="Theme.AppTheme" parent="Base.Theme.AppTheme"/>
+
+    <style name="Theme.AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+    <style name="TextAppearance.Sunflower.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+    
+    <style name="ShapeAppearance.JetpackDemo.Card" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/card_corner_radius</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/card_corner_radius</item>
     </style>
 
 </resources>

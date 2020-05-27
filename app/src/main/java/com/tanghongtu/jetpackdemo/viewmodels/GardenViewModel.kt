@@ -1,4 +1,4 @@
-package com.tanghongtu.jetpackdemo.viewmodel
+package com.tanghongtu.jetpackdemo.viewmodels
 
 import androidx.lifecycle.ViewModel
 

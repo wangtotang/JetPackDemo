@@ -1,4 +1,4 @@
-package com.tanghongtu.jetpackdemo.adapter
+package com.tanghongtu.jetpackdemo.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

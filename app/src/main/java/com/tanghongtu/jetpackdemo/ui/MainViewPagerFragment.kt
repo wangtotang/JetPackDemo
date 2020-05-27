@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 import com.tanghongtu.jetpackdemo.R
-import com.tanghongtu.jetpackdemo.adapter.MY_GARDEN_PAGER_INDEX
-import com.tanghongtu.jetpackdemo.adapter.MainViewPagerAdapter
-import com.tanghongtu.jetpackdemo.adapter.PLANT_LIST_PAGER_INDEX
+import com.tanghongtu.jetpackdemo.adapters.MY_GARDEN_PAGER_INDEX
+import com.tanghongtu.jetpackdemo.adapters.MainViewPagerAdapter
+import com.tanghongtu.jetpackdemo.adapters.PLANT_LIST_PAGER_INDEX
 import com.tanghongtu.jetpackdemo.databinding.FragmentMainViewPagerBinding
 
 /**

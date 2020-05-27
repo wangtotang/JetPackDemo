@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.tanghongtu.jetpackdemo.R
-import com.tanghongtu.jetpackdemo.viewmodel.PlantDetailViewModel
+import com.tanghongtu.jetpackdemo.viewmodels.PlantDetailViewModel
 
 class PlantDetailFragment : Fragment() {
 

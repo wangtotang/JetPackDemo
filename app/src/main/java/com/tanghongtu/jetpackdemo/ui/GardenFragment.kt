@@ -8,13 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.tanghongtu.jetpackdemo.R
-import com.tanghongtu.jetpackdemo.viewmodel.GardenViewModel
+import com.tanghongtu.jetpackdemo.viewmodels.GardenViewModel
 
 class GardenFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = GardenFragment()
-    }
 
     private lateinit var viewModel: GardenViewModel
 

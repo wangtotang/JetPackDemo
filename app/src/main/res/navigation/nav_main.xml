@@ -9,7 +9,11 @@
         android:id="@+id/plantDetailFragment"
         android:name="com.tanghongtu.jetpackdemo.ui.PlantDetailFragment"
         android:label="plant_detail_fragment"
-        tools:layout="@layout/plant_detail_fragment" />
+        tools:layout="@layout/plant_detail_fragment" >
+        <argument
+            android:name="plantId"
+            app:argType="string"/>
+    </fragment>
     <fragment
         android:id="@+id/mainViewPagerFragment"
         android:name="com.tanghongtu.jetpackdemo.ui.MainViewPagerFragment"
@@ -17,6 +21,10 @@
         tools:layout="@layout/fragment_main_view_pager" >
         <action
             android:id="@+id/action_mainViewPagerFragment_to_plantDetailFragment"
-            app:destination="@id/plantDetailFragment" />
+            app:destination="@id/plantDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>
