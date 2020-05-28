@@ -15,7 +15,7 @@ interface PlantDao {
     @Query("SELECT * FROM plants ORDER BY name")
     fun getPlants(): LiveData<List<Plant>>
 
-    @Query("SELECT * FROM plants WHERE growZoneNumber = :growZoneNumber ORDER BY name")
+    @Query("SELECT * FROM plants WHERE grow_zone_number = :growZoneNumber ORDER BY name")
     fun getPlantsWithGrowZoneNumber(growZoneNumber: Int): LiveData<List<Plant>>
 
     @Query("SELECT * FROM plants WHERE id = :plantId")

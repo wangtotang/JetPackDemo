@@ -10,10 +10,16 @@ import java.util.*
  */
 @Entity(tableName = "plants")
 data class Plant(
-    @PrimaryKey @ColumnInfo(name = "id") val plantId: String,
+
+    @PrimaryKey
+    @ColumnInfo(name = "id") val plantId: String,
     val name: String,
+
     val description: String,
+
+    @ColumnInfo(name = "grow_zone_number")
     val growZoneNumber: Int,
+
     val wateringInterval: Int = 7,
     val imageUrl: String = ""
 ){

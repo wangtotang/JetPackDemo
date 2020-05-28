@@ -16,6 +16,7 @@ class PlantListViewModelFactory(
     defaultArgs: Bundle? = null
 ) : AbstractSavedStateViewModelFactory(owner, defaultArgs) {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(
         key: String,
         modelClass: Class<T>,

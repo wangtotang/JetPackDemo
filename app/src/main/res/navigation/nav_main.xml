@@ -9,7 +9,7 @@
         android:id="@+id/plantDetailFragment"
         android:name="com.tanghongtu.jetpackdemo.ui.PlantDetailFragment"
         android:label="plant_detail_fragment"
-        tools:layout="@layout/plant_detail_fragment" >
+        tools:layout="@layout/fragment_plant_detail" >
         <argument
             android:name="plantId"
             app:argType="string"/>

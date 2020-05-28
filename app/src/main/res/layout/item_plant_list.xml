@@ -19,7 +19,9 @@
         android:layout_marginEnd="@dimen/card_side_margin"
         android:layout_marginBottom="@dimen/card_bottom_margin"
         android:onClick="@{clickListener}"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.JetpackDemo.Card">
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:cardPreventCornerOverlap="false"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AppTheme.Card">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,8 +35,7 @@
                 app:imageFromUrl="@{plant.imageUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_plant_item"
@@ -48,6 +49,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_plant_item"
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:gravity="center_horizontal" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.tanghongtu.jetpackdemo.widgets.MaskedCardView>
 </layout>

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.tanghongtu.jetpackdemo.adapters.PlantListAdapter
-import com.tanghongtu.jetpackdemo.databinding.PlantListFragmentBinding
+import com.tanghongtu.jetpackdemo.databinding.FragmentPlantListBinding
 import com.tanghongtu.jetpackdemo.utilities.InjectorUtils
 import com.tanghongtu.jetpackdemo.viewmodels.PlantListViewModel
 
@@ -22,7 +22,7 @@ class PlantListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = PlantListFragmentBinding.inflate(inflater, container, false)
+        val binding = FragmentPlantListBinding.inflate(inflater, container, false)
 
         val adapter = PlantListAdapter()
         binding.rlPlantList.adapter = adapter

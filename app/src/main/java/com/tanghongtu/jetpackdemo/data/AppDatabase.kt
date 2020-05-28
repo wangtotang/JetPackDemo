@@ -15,11 +15,12 @@ import com.tanghongtu.jetpackdemo.workers.SeedDatabaseWorker
 /**
  * Created by tanghongtu on 2020/5/27.
  */
-@Database(entities = [Plant::class], version = 1, exportSchema = false)
+@Database(entities = [Plant::class, GardenPlanting::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun plantDao(): PlantDao
+    abstract fun gardenPlantingDao(): GardenPlantingDao
 
     companion object {
 
