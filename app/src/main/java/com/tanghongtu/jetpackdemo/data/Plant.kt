@@ -12,7 +12,9 @@ import java.util.*
 data class Plant(
 
     @PrimaryKey
-    @ColumnInfo(name = "id") val plantId: String,
+    @ColumnInfo(name = "id")
+    val plantId: String,
+    //使用val声明的默认为NOT NULL
     val name: String,
 
     val description: String,

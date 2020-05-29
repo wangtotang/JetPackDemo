@@ -12,4 +12,5 @@
         <item quantity="other">water in %d days.</item>
     </plurals>
     <string name="share_text">分享了 %s 植物, 来自JetpackDemo的分享</string>
+    <string name="add_plant_tips">添加了一棵植物</string>
 </resources>
