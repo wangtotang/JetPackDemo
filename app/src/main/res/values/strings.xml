@@ -8,9 +8,18 @@
     <string name="menu_share_title">Share</string>
     <string name="watering_needs_prefix">浇水指南</string>
     <plurals name="watering_needs_suffix">
-        <item quantity="one">water tomorrow.</item>
-        <item quantity="other">water in %d days.</item>
+        <item quantity="one">每天</item>
+        <item quantity="other">每%d天</item>
     </plurals>
     <string name="share_text">分享了 %s 植物, 来自JetpackDemo的分享</string>
     <string name="add_plant_tips">添加了一棵植物</string>
+    <string name="garden_empty_tips">你的花园是空的</string>
+    <string name="add_plant">去添加植物</string>
+    <string name="filter_by_zone">按生长区筛选</string>
+    <string name="plant_header">种植日期</string>
+    <string name="watered_date_header">上次浇水时间</string>
+    <plurals name="watering_next">
+        <item quantity="one">明天</item>
+        <item quantity="other">%d天后</item>
+    </plurals>
 </resources>

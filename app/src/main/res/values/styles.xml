@@ -36,4 +36,6 @@
 
     <style name="ShapeAppearance.AppTheme.FAB" parent="ShapeAppearance.MaterialComponents.SmallComponent"/>
 
+    <style name="ShapeAppearance.AppTheme.Button.Add" parent="ShapeAppearance.AppTheme.Card"/>
+
 </resources>

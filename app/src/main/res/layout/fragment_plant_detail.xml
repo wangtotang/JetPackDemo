@@ -14,6 +14,7 @@
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +25,11 @@
             android:id="@+id/appbar"
             android:fitsSystemWindows="true"
             android:layout_height="@dimen/plant_detail_app_bar_height"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:background="?attr/colorSurface"
+            android:stateListAnimator="@animator/show_toolbar"
+            android:animateLayoutChanges="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
@@ -59,7 +64,9 @@
                     app:titleTextColor="?attr/colorOnSurface"
                     app:layout_collapseMode="pin"
                     app:navigationIcon="@drawable/ic_round_back"
-                    app:menu="@menu/menu_plant_detail" />
+                    app:menu="@menu/menu_plant_detail">
+
+                </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>

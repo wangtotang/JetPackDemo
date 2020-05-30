@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.GardenFragment"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="hasPlantings"
+            type="boolean" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.GardenFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rl_garden_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_garden_planting"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="@integer/grid_column"
+            android:clipToPadding="false"
+            android:layout_marginStart="@dimen/card_side_margin"
+            android:layout_marginEnd="@dimen/card_side_margin"
+            android:layout_marginTop="@dimen/margin_normal"
+            app:isGone="@{!hasPlantings}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:isGone="@{hasPlantings}">
+
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/garden_empty_tips"
+                android:textAppearance="?attr/textAppearanceHeadline5"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_plant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_plant"
+                android:onClick="@{clickListener}"
+                android:textColor="?attr/colorPrimary"
+                app:shapeAppearance="@style/ShapeAppearance.AppTheme.Button.Add"
+                android:backgroundTint="?attr/colorOnPrimary"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

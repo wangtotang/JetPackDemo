@@ -2,6 +2,7 @@ package com.tanghongtu.jetpackdemo.adapters
 
 import android.text.TextUtils
 import android.text.method.LinkMovementMethod
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.text.HtmlCompat
@@ -52,5 +53,14 @@ fun bindRenderHtml(view: TextView, description: String?) {
             text = HtmlCompat.fromHtml(description!!, HtmlCompat.FROM_HTML_MODE_COMPACT)
             movementMethod = LinkMovementMethod.getInstance()
         }
+    }
+}
+
+@BindingAdapter("isGone")
+fun bindIsGone(view: View, isGone: Boolean?) {
+    view.visibility = if (isGone == null || isGone) {
+        View.GONE
+    } else {
+        View.VISIBLE
     }
 }

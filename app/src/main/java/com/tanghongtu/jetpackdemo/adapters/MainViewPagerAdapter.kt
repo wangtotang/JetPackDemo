@@ -14,7 +14,7 @@ const val PLANT_LIST_PAGER_INDEX = 1
 
 class MainViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    //谷歌此处用了高阶函数，我也不知道它为什么那么喜欢用高阶函数，然后
+    //谷歌此处用了高阶函数，我也不知道它为什么那么喜欢用高阶函数，然后...
     //原来是为了延迟初始化，做到调用的时候才去实例化对象
     private val tabFragmentsCreators: Map<Int, () -> Fragment> = mapOf(
         MY_GARDEN_PAGER_INDEX to { GardenFragment() },

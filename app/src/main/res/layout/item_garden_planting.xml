@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.tanghongtu.jetpackdemo.viewmodels.PlantAndGardenPlantingsViewModel" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.tanghongtu.jetpackdemo.widgets.MaskedCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        android:layout_marginBottom="@dimen/card_bottom_margin"
+        android:layout_marginStart="@dimen/card_side_margin"
+        android:layout_marginEnd="@dimen/card_side_margin"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.AppTheme.Card"
+        app:cardPreventCornerOverlap="false"
+        app:cardElevation="@dimen/cardview_default_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_planting"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/plant_item_image_height"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{viewModel.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_planting_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="苹果"
+                android:text="@{viewModel.plantName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_planting"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_normal" />
+
+            <TextView
+                android:id="@+id/tv_plant_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/plant_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_planting_name"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:textColor="?attr/colorAccent" />
+
+            <TextView
+                android:id="@+id/tv_plant_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.plantDateString}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_plant_header"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+            <TextView
+                android:id="@+id/tv_watered_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/watered_date_header"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_plant_date"
+                android:textStyle="bold"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:gravity="center_horizontal"
+                android:textColor="?attr/colorAccent"
+                android:layout_marginTop="@dimen/margin_normal" />
+
+            <TextView
+                android:id="@+id/tv_watered_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.waterDateString}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_watered_header"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/tv_watered_interval"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{@plurals/watering_next(viewModel.wateringInterval, viewModel.wateringInterval)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_watered_date"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_normal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.tanghongtu.jetpackdemo.widgets.MaskedCardView>
+</layout>

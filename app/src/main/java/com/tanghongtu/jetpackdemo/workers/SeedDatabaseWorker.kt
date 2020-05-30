@@ -35,7 +35,7 @@ class SeedDatabaseWorker(
                 }
             }
         } catch (e: Exception) {
-            Log.e(TAG, e.message)
+            Log.e(TAG, e.message!!)
             Result.failure()
         }
 

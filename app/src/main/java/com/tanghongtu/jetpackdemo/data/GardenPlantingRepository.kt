@@ -7,7 +7,7 @@ class GardenPlantingRepository private constructor(
     private val gardenPlantingDao: GardenPlantingDao
 ) {
 
-    fun getGardenPlantings() = gardenPlantingDao.getGardenPlantings()
+    fun getGardenPlantings() = gardenPlantingDao.getPlantedGardens()
 
     suspend fun createGardenPlanting(plantId: String) {
         val gardenPlanting = GardenPlanting(plantId)

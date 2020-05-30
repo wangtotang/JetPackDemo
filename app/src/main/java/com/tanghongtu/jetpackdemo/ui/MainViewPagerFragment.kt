@@ -26,15 +26,17 @@ class MainViewPagerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentMainViewPagerBinding.inflate(inflater, container, false)
+            .apply {
+                vpMain.adapter = MainViewPagerAdapter(this@MainViewPagerFragment)
 
-        binding.vpMain.adapter = MainViewPagerAdapter(this)
+                TabLayoutMediator(tabMain, vpMain) { tab, position ->
+                    tab.setIcon(getTabIcon(position))
+                    tab.text = getTabTitle(position)
+                }.attach()
 
-        TabLayoutMediator(binding.tabMain, binding.vpMain) { tab, position ->
-            tab.setIcon(getTabIcon(position))
-            tab.text = getTabTitle(position)
-        }.attach()
+                (activity as AppCompatActivity).setSupportActionBar(toolbar)
 
-        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+            }
 
         return binding.root
     }

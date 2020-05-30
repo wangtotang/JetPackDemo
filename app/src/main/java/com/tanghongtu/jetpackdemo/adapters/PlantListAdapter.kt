@@ -46,7 +46,7 @@ class PlantListAdapter : ListAdapter<Plant, PlantListAdapter.PlantListViewHolder
         }
 
         fun bind(item: Plant) {
-            binding.apply {
+            with(binding) {
                 plant = item
                 executePendingBindings()
             }

@@ -57,9 +57,7 @@ class PlantDetailFragment : Fragment() {
                     }
                 }
 
-                setHasOptionsMenu(true)
-
-                clickListener = View.OnClickListener {
+                setClickListener {
                     hideFab(fab)
                     plantDetailViewModel.addPlantToGarden()
                     Snackbar.make(root, R.string.add_plant_tips, Snackbar.LENGTH_LONG).show()

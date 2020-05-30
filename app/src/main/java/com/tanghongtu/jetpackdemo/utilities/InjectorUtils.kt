@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import com.tanghongtu.jetpackdemo.data.AppDatabase
 import com.tanghongtu.jetpackdemo.data.GardenPlantingRepository
 import com.tanghongtu.jetpackdemo.data.PlantRepository
+import com.tanghongtu.jetpackdemo.viewmodels.GardenViewModelFactory
 import com.tanghongtu.jetpackdemo.viewmodels.PlantDetailViewModelFactory
 import com.tanghongtu.jetpackdemo.viewmodels.PlantListViewModelFactory
 
@@ -30,5 +31,7 @@ object InjectorUtils {
             getPlantRepository(context), getGardenRepository(context), plantId
         )
     }
+
+    fun provideGardenViewModelFactory(context: Context) = GardenViewModelFactory(getGardenRepository(context))
 
 }

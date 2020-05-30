@@ -7,7 +7,9 @@
 
     </data>
 
+    <!--coordinatorLayout和AppbarLayout的Id必须设置，可防止从其他页面返回时，折叠状态被取消-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
@@ -26,10 +28,12 @@
             android:theme="@style/Theme.AppTheme.AppBarOverlay">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:fitsSystemWindows="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|snap"
-                app:toolbarId="@id/toolbar">
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:toolbarId="@+id/toolbar">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
